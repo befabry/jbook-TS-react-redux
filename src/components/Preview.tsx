@@ -39,8 +39,6 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
     iframe.current.contentWindow.postMessage(code, "*");
   }, [code]);
 
-  console.log("test1");
-
   return (
     <div className="preview-wrapper">
       <iframe
