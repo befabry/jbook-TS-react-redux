@@ -36,7 +36,14 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
 
   useEffect(() => {
     iframe.current.srcdoc = html;
-    iframe.current.contentWindow.postMessage(code, "*");
+    /*
+    If we replace the inner HTML of our iframe, the content is printed but then the message
+    we post is received and it erases everything
+    A timeout avoid this problem
+    */
+    setTimeout(() => {
+      iframe.current.contentWindow.postMessage(code, "*");
+    }, 50);
   }, [code]);
 
   return (
