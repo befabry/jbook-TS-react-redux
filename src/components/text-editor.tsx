@@ -5,7 +5,7 @@ import "./text-editor.css";
 const TextEditor: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [editing, setEditing] = useState(false);
-  const [value, setValue] = useState("#Header");
+  const [value, setValue] = useState("# Header");
 
   useEffect(() => {
     const listener = (event: MouseEvent) => {
@@ -30,7 +30,6 @@ const TextEditor: React.FC = () => {
     return (
       <div className="text-editor card" ref={ref}>
         <div className="card-content">
-          {" "}
           <MDEditor value={value} onChange={(v) => setValue(v ?? "")} />
         </div>
       </div>
