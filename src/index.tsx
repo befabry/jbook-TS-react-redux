@@ -3,14 +3,15 @@ import { Provider } from "react-redux";
 
 //import CodeCell from "./components/code-cell";
 import "bulmaswatch/superhero/bulmaswatch.min.css";
-import TextEditor from "./components/text-editor";
+//import TextEditor from "./components/text-editor";
 import { store } from "./state";
+import CellList from "./components/cell-list";
 
 const App = () => {
   return (
     <Provider store={store}>
       <div>
-        <TextEditor />
+        <CellList />
       </div>
     </Provider>
   );

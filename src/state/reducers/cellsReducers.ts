@@ -23,7 +23,7 @@ const randomId = () => {
   return Math.random().toString(36).substr(2, 5);
 };
 
-//immer doc : https://immerjs.github.io/immer/update-patterns
+//Immer doc : https://immerjs.github.io/immer/update-patterns
 //Gotcha : no need to return something, but to make TS happy we do
 const reducer = produce((state: CellsState = initialState, action: Action) => {
   switch (action.type) {
